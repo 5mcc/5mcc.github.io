@@ -115,7 +115,7 @@ p.en {
     margin-top: 0;
     margin-bottom: 0.9rem; /* tighter than before */
     font-style: italic;
-    color: #555;
+    color: #765987;
     font-size: 0.95em;
 }
 
@@ -126,7 +126,7 @@ p.en {
     font-size: 0.9em;
     font-weight: normal;
     font-style: italic;
-    color: #666;
+    color: #765987;
     margin-top: 0.2rem;
 }
 
@@ -235,7 +235,7 @@ footer {
     right: 1rem;
     height: 48px;
     width: auto;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 /* keep header relative so logo positions correctly */

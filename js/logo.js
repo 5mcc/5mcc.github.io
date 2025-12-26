@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const logos = [
-        "images/logos/logo-green.svg",
-        "images/logos/logo-orange.svg",
-        "images/logos/logo-blue.svg",
-        "images/logos/logo-pink.svg"
+        "logos/5mccLOGO1.png",
+        "logos/5mccLOGO3.png",
+        "logos/5mccLOGO5.png",
+        "logos/5mccLOGO7.png",
+        "logos/5mccLOGO10.png"
     ];
 
     const chosen = logos[Math.floor(Math.random() * logos.length)];
