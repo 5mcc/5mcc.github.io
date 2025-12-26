@@ -3,8 +3,9 @@ const episodesContainer = document.querySelector('#episodes-container');
 
 let allEpisodes = [];
 let currentIndex = 0;
-const batchSize = 10; // show 10 episodes at a time
+const batchSize = 10; // Number of episodes per "show more"
 
+// Generate HTML for a single episode
 function createEpisodeHTML(episode) {
     return `
     <article class="episode">
@@ -17,7 +18,7 @@ function createEpisodeHTML(episode) {
     `;
 }
 
-// Load next batch
+// Show next batch of episodes
 function showMoreEpisodes() {
     const nextBatch = allEpisodes.slice(currentIndex, currentIndex + batchSize);
     nextBatch.forEach(ep => {
@@ -31,18 +32,18 @@ function showMoreEpisodes() {
     }
 }
 
-// Fetch RSS
+// Fetch RSS and populate episodes
 fetch(rssFeedUrl)
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(data => {
         const items = data.querySelectorAll('item');
         allEpisodes = Array.from(items).map(item => ({
-            title: item.querySelector('title').textContent,
-            link: item.querySelector('link').textContent,
-            description: item.querySelector('description').textContent
+            title: item.querySelector('title')?.textContent || 'Untitled',
+            link: item.querySelector('link')?.textContent || '#',
+            description: item.querySelector('description')?.textContent || ''
         }));
-        showMoreEpisodes();
+        showMoreEpisodes(); // initial load
     })
     .catch(err => {
         episodesContainer.innerHTML = 'Episodes konnten leider nicht geladen werden.';
