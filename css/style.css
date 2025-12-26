@@ -1,34 +1,38 @@
-/* =========
+/* =========================
    Base
-   ========= */
-
-:root {
-    --bg-main: #fff9dc;
-    --bg-section: #ffffff;
-    --color-text: #45413a;
-    --color-muted: #709d67;
-    --color-accent: #005f56;
-    --color-accent-soft: #d3b2df;
-    --border-light: #e2e6e5;
-}
+   ========================= */
 
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont,
-                 "Segoe UI", Roboto;
-    background-color: var(--bg-main);
-    color: var(--color-text);
+                 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f8f6; /* soft, warm background */
+    color: #222;
     line-height: 1.65;
 }
 
-/* =========
+/* =========================
+   Layout helpers
+   ========================= */
+
+header,
+main,
+footer {
+    max-width: 42rem;
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* =========================
    Header
-   ========= */
+   ========================= */
 
 header {
-    border-bottom: 1px solid var(--border-light);
-    padding: 2.5rem 1rem 2rem;
-    background: var(--bg-section);
+    border-bottom: 1px solid #ddd;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    background: transparent;
 }
 
 header h1 {
@@ -38,98 +42,97 @@ header h1 {
 }
 
 header p {
-    margin-top: 0.5rem;
-    color: var(--color-muted);
+    margin-top: 0.6rem;
+    color: #444;
     max-width: 34rem;
 }
 
-/* =========
+/* =========================
    Navigation
-   ========= */
+   ========================= */
 
 nav {
     margin-top: 1.25rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
 }
 
 nav a {
+    margin-right: 1.25rem;
     text-decoration: none;
-    color: var(--color-accent);
+    color: #2f6f6a; /* new calmer green */
     font-weight: 500;
-    white-space: nowrap;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* =========
+/* =========================
    Main content
-   ========= */
+   ========================= */
 
 main {
-    max-width: 42rem;
-    padding: 2.5rem 1rem;
-    margin: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 section {
     margin-bottom: 3.5rem;
 }
 
-/* Give sections a bit of air on large screens */
-@media (min-width: 700px) {
-    section {
-        padding: 2rem 2.5rem;
-        background: var(--bg-section);
-        border-radius: 6px;
-        box-shadow: 0 0 0 1px var(--border-light);
-    }
-}
-
-h1, h2 {
-    font-weight: 600;
+h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
 }
 
 h2 {
     font-size: 1.4rem;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid #ddd;
     padding-bottom: 0.4rem;
-    margin-bottom: 1.25rem;
+    margin-top: 2.5rem;
 }
 
-/* =========
-   Bilingual styling
-   ========= */
+/* =========================
+   Links (global)
+   ========================= */
 
-/* German = primary */
-.de {
-    margin-bottom: 0.6rem;
+a {
+    color: #2f6f6a;
 }
 
-/* English = companion */
-.en {
+a:hover {
+    color: #1f4f4b;
+}
+
+/* =========================
+   Bilingual styling (tighter)
+   ========================= */
+
+p.de {
+    margin-bottom: 0.2rem;
+}
+
+p.en {
+    margin-top: 0;
+    margin-bottom: 0.9rem; /* tighter than before */
+    font-style: italic;
+    color: #555;
     font-size: 0.95em;
-    color: var(--color-muted);
-    padding-left: 0.75rem;
-    border-left: 2px solid var(--color-accent-soft);
-    margin-bottom: 1.2rem;
 }
 
-/* Headline translations */
+/* English subtitles / titles */
+
 .en-title {
     display: block;
-    font-size: 0.6em;
-    font-weight: lighter;
-    color: var(--color-muted);
-    margin-top: 0.25rem;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.2rem;
 }
 
-/* =========
-   Episodes
-   ========= */
+/* =========================
+   Episodes (if used)
+   ========================= */
 
 .episode {
     margin-top: 2rem;
@@ -142,62 +145,50 @@ h2 {
 
 .episode time {
     font-size: 0.85rem;
-    color: var(--color-muted);
+    color: #666;
 }
 
-.listen {
-    margin-top: 0.6rem;
-    font-size: 0.9em;
-}
-
-.listen a {
-    text-decoration: none;
-    color: var(--color-accent);
-}
-
-.listen a:hover {
-    text-decoration: underline;
-}
-
-/* =========
+/* =========================
    Footer
-   ========= */
+   ========================= */
 
 footer {
-    border-top: 1px solid var(--border-light);
-    padding: 2rem 1rem;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--color-muted);
-    background: var(--bg-section);
+    color: #666;
+    background: transparent;
 }
 
-/* =========
-   Mobile tweaks
-   ========= */
+/* =========================
+   Responsive (phones)
+   ========================= */
 
-@media (max-width: 480px) {
-
-    header {
-        padding: 2rem 1rem 1.5rem;
-    }
+@media (max-width: 600px) {
 
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
-    main {
-        padding: 1.75rem 1rem;
+    h1 {
+        font-size: 1.6rem;
     }
 
-    .en {
-        padding-left: 0.6rem;
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-bottom: 0.4rem;
     }
 }
 
-/* =========
+/* =========================
    Print styles
-   ========= */
+   ========================= */
 
 @media print {
 
@@ -207,7 +198,9 @@ footer {
         font-size: 11pt;
     }
 
-    header, nav, footer {
+    header,
+    nav,
+    footer {
         display: none;
     }
 
@@ -217,25 +210,50 @@ footer {
         margin: 0;
     }
 
-    section {
-        box-shadow: none;
-        border: none;
-        padding: 0;
-        margin-bottom: 2rem;
-    }
-
     h2 {
         border: none;
         page-break-after: avoid;
     }
 
-    .episode {
-        page-break-inside: avoid;
+    p.en {
+        font-style: italic;
+        color: #000;
     }
 
-    .en {
-        border-left: none;
-        padding-left: 0;
-        font-style: italic;
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================
+   Logo (top right)
+   ========================= */
+
+#site-logo {
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    height: 48px;
+    width: auto;
+    opacity: 0.9;
+}
+
+/* keep header relative so logo positions correctly */
+header {
+    position: relative;
+}
+
+/* smaller logo on phones */
+@media (max-width: 600px) {
+    #site-logo {
+        height: 36px;
+        top: 2rem;
+    }
+}
+
+/* hide logo when printing */
+@media print {
+    #site-logo {
+        display: none;
     }
 }
