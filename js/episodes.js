@@ -1,9 +1,8 @@
-const rssFeedUrl = 'https://cba.media/podcast/5minutenclimatechance/feed';
 const episodesContainer = document.querySelector('#episodes-container');
 
 let allEpisodes = [];
 let currentIndex = 0;
-const batchSize = 10; // Number of episodes per "show more"
+const batchSize = 10;
 
 // Generate HTML for a single episode
 function createEpisodeHTML(episode) {
@@ -26,24 +25,17 @@ function showMoreEpisodes() {
     });
     currentIndex += batchSize;
 
-    // Hide button if all episodes are loaded
     if (currentIndex >= allEpisodes.length) {
         document.querySelector('#show-more-btn').style.display = 'none';
     }
 }
 
-// Fetch RSS and populate episodes
-fetch(rssFeedUrl)
-    .then(response => response.text())
-    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+// Fetch JSON instead of RSS
+fetch('js/episodes.json')
+    .then(res => res.json())
     .then(data => {
-        const items = data.querySelectorAll('item');
-        allEpisodes = Array.from(items).map(item => ({
-            title: item.querySelector('title')?.textContent || 'Untitled',
-            link: item.querySelector('link')?.textContent || '#',
-            description: item.querySelector('description')?.textContent || ''
-        }));
-        showMoreEpisodes(); // initial load
+        allEpisodes = data;
+        showMoreEpisodes();
     })
     .catch(err => {
         episodesContainer.innerHTML = 'Episodes konnten leider nicht geladen werden.';
