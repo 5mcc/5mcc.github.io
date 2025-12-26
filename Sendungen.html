@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kurz, wissenschaftlich fundiert und verständlich: der Klima-Podcast 5MinutenClimateChance.">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="alternate" type="application/rss+xml"
-          title="5MinutenClimateChance RSS"
-          href="https://cba.media/podcast/5minutenclimatechance/feed">
 </head>
-
-<script src="js/logo.js"></script>
 
 <body>
 
@@ -35,12 +30,23 @@
 <main>
   <section>
     <h1>Unsere Sendungen</h1>
-    <div id="episodes-list">
-      Loading episodes ...
+
+    <div id="episodes-list" aria-live="polite">
+      Episoden werden geladen ...
     </div>
-    <button id="show-more" style="display:none;">Zeig mir mehr</button>
+
+    <button id="show-more" style="display:none;">
+      Zeig mir mehr
+    </button>
   </section>
+
+  <noscript>
+    <p>
+      Bitte aktivieren Sie JavaScript, um die Episoden anzuzeigen.
+    </p>
+  </noscript>
 </main>
+
 
 
 <footer>

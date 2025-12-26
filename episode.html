@@ -7,24 +7,31 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header>
   <h1>5MinutenClimateChance</h1>
   <nav>
-      <a href="5MinutenClimateChance.html">Home</a>
-      <a href="Sendungen.html">Sendungen</a>
+    <a href="5MinutenClimateChance.html">Home</a>
+    <a href="Sendungen.html">Sendungen</a>
   </nav>
 </header>
 
 <main>
-  <div id="episode-detail">
-    Loading episode...
+  <div id="episode-detail" aria-live="polite">
+    Episode wird geladen …
   </div>
+
+  <noscript>
+    <p>Bitte aktivieren Sie JavaScript, um diese Episode anzuzeigen.</p>
+  </noscript>
 </main>
 
-
 <footer>
-    © 2025 · 5MinutenClimateChance · Der Klima-Podcast
+  © 2025 · 5MinutenClimateChance · Der Klima-Podcast
 </footer>
+
+<script src="js/logo.js"></script>
+<script src="js/episode.js"></script>
 
 </body>
 </html>
