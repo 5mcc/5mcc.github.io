@@ -114,7 +114,7 @@ p.de {
 p.en {
     margin-top: 0;
     margin-bottom: 0.9rem; /* tighter than before */
-    margin-left: 0.5rem;
+    margin-left: 2rem;
     font-style: italic;
     color: #765987;
     font-size: 0.95em;
@@ -129,7 +129,7 @@ p.en {
     font-style: italic;
     color: #765987;
     margin-top: 0.2rem;
-    margin-left: 0.5rem;
+    margin-left: 2rem;
 }
 
 /* =========================
