@@ -65,7 +65,7 @@ header p {
    ========================= */
 
 nav {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
 }
 
 nav a {
@@ -291,7 +291,7 @@ header {
     display: block;
     padding: 1rem 1.2rem;
     border-radius: 12px;
-    border-color: #70b47f;
+    border-color: #56725c;
     background: #f4f4f4;
     text-decoration: none;
     color: inherit;

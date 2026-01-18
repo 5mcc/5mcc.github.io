@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <title>5MinutenClimateChance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kurz, wissenschaftlich fundiert und verständlich: der Klima-Podcast 5MinutenClimateChance.">
+    <meta name="description"
+          content="Kurz, wissenschaftlich fundiert und verständlich: der Klima-Podcast 5MinutenClimateChance.">
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="alternate" type="application/rss+xml"
+    <link rel="alternate"
+          type="application/rss+xml"
           title="5MinutenClimateChance RSS"
           href="https://cba.media/podcast/5minutenclimatechance/feed">
+
+    <style>
+        details.person { margin-bottom: 1.5rem; }
+        details.person > summary {
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: bold;
+            list-style: none;
+        }
+        details.person > summary::-webkit-details-marker { display: none; }
+        details.person > summary::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+        details.person[open] > summary::before {
+            transform: rotate(90deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -31,25 +54,26 @@
 </header>
 
 <main>
-
 <section>
-    <h1>
-        Wir haben so viel erlebt
-        <span class="en-title">We have been through a lot</span>
-    </h1>
 
-    <p class="de">
-        Über die Jahre hat uns so einiges Freude bereitet, Türen geöffnet, Diskussionen gestartet und angetrieben.
-        Hier eine kleine Sammlung, bestimmt haben wir leider einige Momente vergessen, obwohl jeder einzelne ein Grund
-        für uns ist zu Feiern. Immer noch.
-    </p>
-    <p class="en">
-        Over the years, many things have brought us joy, opened doors, sparked discussions, and kept us going.
-        Here is a small collection — we’re sure we’ve forgotten a few moments, even though every single one of them
-        is still a reason for us to celebrate.
-    </p>
+<h1>
+    Wir haben so viel erlebt
+    <span class="en-title">We have been through a lot</span>
+</h1>
 
-    <h2>Ein bisschen Stolz</h2>
+<p class="de">
+    Über die Jahre hat uns so einiges Freude bereitet, Türen geöffnet, Diskussionen gestartet und angetrieben.
+    Hier eine kleine Sammlung, bestimmt haben wir leider einige Momente vergessen, obwohl jeder einzelne ein Grund
+    für uns ist zu Feiern. Immer noch.
+</p>
+<p class="en">
+    Over the years, many things have brought us joy, opened doors, sparked discussions, and kept us going.
+    Here is a small collection — we’re sure we’ve forgotten a few moments, even though every single one of them
+    is still a reason for us to celebrate.
+</p>
+
+<details class="person">
+<summary>Ein bisschen Stolz</summary>
 
     <p class="de">
         2021 haben wir den <a href="https://www.umweltjournalismus-preis.at">Österreichischen Umweltjournalismuspreis</a>
@@ -153,10 +177,11 @@
         You can find a short interview
         <a href="https://www.youtube.com/watch?v=x3cyGXvhTQE&t=99s">here</a>.
     </p>
-</section>
 
-<section>
-    <h2>Podcasting im Jazz-Club</h2>
+</details>
+
+<details class="person">
+<summary>Podcasting im Jazz-Club</summary>
 
     <p class="de">
         Unsere Freunde von <a href="http://www.little-rosies-kindergarten.com">Little Rosies Kindergarten</a>
@@ -180,10 +205,10 @@
         <a href="https://www.youtube.com/watch?v=i9siRQMkhlY">See for yourself</a>.
         Here’s to friendships like these!
     </p>
-</section>
+</details>
 
-<section>
-    <h2>Tief drin im World Wide Web</h2>
+<details class="person">
+<summary>Tief drin im World Wide Web</summary>
 
     <p class="de">
         Immer wieder hat uns jemand entdeckt, erwähnt, gelobt.
@@ -212,10 +237,10 @@
         <a href="https://nachhaltig-in-graz.at/nachhaltige-medien-2/interessante-podcasts/">Nachhaltig in Graz</a>
         — pretty cool, right? We were delighted.
     </p>
-</section>
+</details>
 
-<section>
-    <h2>Wir haben geplaudert und gelernt …</h2>
+<details class="person">
+<summary>Wir haben geplaudert und gelernt …</summary>
 
     <p class="de">
         Wir haben mit Wissenschaftler*innen (außerhalb des Teams) am
@@ -271,10 +296,10 @@
         as well as with the Climate Referendum initiative.
         What a joy — and what an honour!
     </p>
-</section>
+</details>
 
-<section>
-    <h2>Unsere Spuren hinterlassen …</h2>
+<details class="person">
+<summary>Unsere Spuren hinterlassen …</summary>
 
     <p class="de">
         Auf der WissKon23 hat uns
@@ -425,10 +450,10 @@
         <a href="https://www.lcoy.earth/lcoy-2021">2021 highlights</a>.
         Always inspiring to meet so many young, critical, and motivated voices!
     </p>
-</section>
+</details>
 
-<section>
-    <h2>Und dankend Unterstützung erhalten</h2>
+<details class="person">
+<summary>Und dankend Unterstützung erhalten</summary>
 
     <p class="de">
         Danke an das
