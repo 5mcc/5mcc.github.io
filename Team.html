@@ -9,20 +9,35 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="alternate"
-        type="application/rss+xml"
-        title="5MinutenClimateChance RSS"
-        href="https://cba.media/podcast/5minutenclimatechance/feed">
+          type="application/rss+xml"
+          title="5MinutenClimateChance RSS"
+          href="https://cba.media/podcast/5minutenclimatechance/feed">
+
+    <style>
+        details.person { margin-bottom: 1.5rem; }
+        details.person > summary {
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: bold;
+            list-style: none;
+        }
+        details.person > summary::-webkit-details-marker { display: none; }
+        details.person > summary::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+        details.person[open] > summary::before { transform: rotate(90deg); }
+    </style>
 </head>
 
 <body>
-
 <header>
     <h1>5MinutenClimateChance</h1>
     <p class="subtitle de">Der Klima-Podcast</p>
     <p class="subtitle en">The climate podcast</p>
-
     <img id="site-logo" alt="5MinutenClimateChance Logo">
-
     <nav>
         <a href="5MinutenClimateChance.html">5MinutenClimateChance</a>
         <a href="Sendungen.html">Sendungen</a>
@@ -32,20 +47,17 @@
         <a href="Impressum.html">Impressum</a>
     </nav>
 </header>
-<body>
 
 <main>
-
 <section>
 
 <h1>
     Die Stimmen hinter 5mcc
-    <span class="en-title">
-        The Voices behind 5mcc
-    </span>
+    <span class="en-title">The Voices behind 5mcc</span>
 </h1>
 
-<h2>Alexandra Reichinger</h2>
+<!-- FULL CONTENT: all persons folded -->
+Alexandra Reichinger</h2>
 
 <p class="de">
 “Communication is key – ein Sprichwort, das sich schon in so mancher Situation bewahrheitet hat!
@@ -623,6 +635,31 @@ we are happy to encourage you in building your own project.
 </footer>
 
 <script src="js/logo.js"></script>
+
+</body>
+</html>
+
+
+</section>
+</main>
+
+<footer>
+    © 2025 · 5MinutenClimateChance · Der Klima-Podcast
+</footer>
+
+<script src="js/logo.js"></script>
+<script>
+const persons = document.querySelectorAll('details.person');
+persons.forEach(p => {
+  p.addEventListener('toggle', () => {
+    if (p.open) {
+      persons.forEach(other => {
+        if (other !== p) other.removeAttribute('open');
+      });
+    }
+  });
+});
+</script>
 
 </body>
 </html>
