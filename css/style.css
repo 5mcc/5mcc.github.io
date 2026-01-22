@@ -15,7 +15,7 @@ body {
         Helvetica,
         Arial,
         sans-serif;
-    background-color: #f7f8f6;
+    background-color: #f6f5f2;
     color: #222;
     line-height: 1.7;
 }
@@ -34,281 +34,189 @@ footer {
 }
 
 /* =========================
-   Header
+   Headings – brush strokes
    ========================= */
-
-header p {
-    margin-top: 2rem;
-    color: #555;
-    max-width: 34rem;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.85rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-}
-
-header p {
-    margin-top: 0.5rem;
-    color: #555;
-    max-width: 34rem;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-/* =========================
-   Navigation
-   ========================= */
-
-nav {
-    margin-top: 2rem;
-}
-
-nav a {
-    margin-right: 1.25rem;
-    text-decoration: none;
-    color: #2f6f6a;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* =========================
-   Main content
-   ========================= */
-
-main {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-section {
-    margin-bottom: 3.5rem;
-}
-
-h1 {
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
-    font-weight: 600;
-}
 
 h2 {
+    position: relative;
     font-size: 1.25rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
-    border: none;
+    margin-top: 2.8rem;
+    margin-bottom: 2.4rem;
     font-weight: 600;
     letter-spacing: -0.01em;
 }
 
-.episode h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
+h2::after {
+    content: "";
+    position: absolute;
+    left: -0.3rem;
+    bottom: -1.1em;
+    width: 4.2rem;
+    height: 0.6em;
+    border-radius: 14px;
+    z-index: -1;
 }
+
+/* rotating warm colors */
+h2:nth-of-type(6n+1)::after { background: rgba(126,177,155,0.55); }
+h2:nth-of-type(6n+2)::after { background: rgba(246,180,166,0.65); }
+h2:nth-of-type(6n+3)::after { background: rgba(156,135,178,0.55); }
+h2:nth-of-type(6n+4)::after { background: rgba(232,192,124,0.6); }
+h2:nth-of-type(6n+5)::after { background: rgba(140,176,210,0.55); }
+h2:nth-of-type(6n+6)::after { background: rgba(210,140,108,0.6); }
+
+section:nth-of-type(odd) h2::after { transform: rotate(-1.3deg); }
+section:nth-of-type(even) h2::after { transform: rotate(1.1deg); }
 
 /* =========================
-   Links (global)
-   ========================= */
-
-a {
-    color: #2f6f6a;
-}
-
-a:hover {
-    color: #70b47f;
-}
-
-/* =========================
-   Bilingual styling (tighter)
+   Bilingual paragraphs
    ========================= */
 
 p.de {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
 }
 
 p.en {
-    margin-top: 0.5rem;
-    margin-bottom: 0.9rem; /* tighter than before */
-    margin-left: 3.5rem;
+    position: relative;
+    margin: 0;
+    padding-top: 1.1rem;
     font-style: italic;
-    color: #765987;
+    color: #6f567c;
     font-size: 0.95em;
 }
 
-/* English subtitles / titles */
-
-.en-title {
-    display: block;
-    font-size: 0.9em;
-    font-weight: normal;
-    font-style: italic;
-    color: #765987;
-    margin-top: 0.2rem;
-    margin-left: 2rem;
+/* horizontal dotted brush line (partial width) */
+p.en::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14rem;
+    height: 10px;
+    background:
+        radial-gradient(circle, rgba(156,135,178,0.6) 42%, transparent 44%)
+        0 50% / 14px 10px repeat-x;
 }
 
 /* =========================
-   Episodes (if used)
+   Wave glow sections
    ========================= */
 
-.episode {
-    margin-top: 2rem;
+.wave-bg {
+    position: relative;
+    padding: 2rem 0 1.4rem;
 }
 
-.episode h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-}
-
-.episode time {
-    font-size: 0.85rem;
-    color: #666;
+.wave-bg::before {
+    content: "";
+    position: absolute;
+    left: -40%;
+    top: -35%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(126,177,155,0.28),
+        transparent 62%
+    );
+    z-index: -1;
 }
 
 /* =========================
-   Footer
+   Sinus wave dividers
    ========================= */
 
-footer {
-    border-top: 1px solid #ddd;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #666;
-    background: transparent;
+.wave-divider {
+    width: 100%;
+    height: 48px;
+    margin: 4.5rem 0;
+}
+
+.wave-divider svg {
+    width: 100%;
+    height: 100%;
+}
+
+.wave-divider path {
+    fill: none;
+    stroke-width: 2.4;
+}
+
+.wave-divider.deep-1 path { stroke: #9c87b2; }
+.wave-divider.deep-2 path { stroke: #7eb19b; }
+.wave-divider.deep-3 path { stroke: #e8c07c; }
+.wave-divider.deep-4 path { stroke: #d28c6c; }
+
+/* =========================
+   Fold / Unfold – brush spiral system
+   ========================= */
+
+.fold-marker {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+/* folded = brush-style spiral */
+.folded .fold-marker {
+    background-color: #7eb19b;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'>\
+<path d='M20 20 m -12 0 a 12 12 0 1 0 24 0 a 12 12 0 1 0 -24 0 \
+m 4 0 a 8 8 0 1 1 16 0 a 8 8 0 1 1 -16 0' \
+fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'/>\
+</svg>");
+    mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'>\
+<path d='M20 20 m -12 0 a 12 12 0 1 0 24 0 a 12 12 0 1 0 -24 0 \
+m 4 0 a 8 8 0 1 1 16 0 a 8 8 0 1 1 -16 0' \
+fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'/>\
+</svg>");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+/* unfolded = vertical brush line */
+.unfolded .fold-marker {
+    width: 6px;
+    height: 28px;
+    border-radius: 6px;
+    background: #7eb19b;
 }
 
 /* =========================
-   Responsive (phones)
+   Cards – framed
    ========================= */
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    h1 {
-        font-size: 1.4rem;
-    }
-
-    h2 {
-        font-size: 1.15rem;
-    }
+.contact-card,
+.card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.07);
+    border: 2px solid rgba(156,135,178,0.45);
 }
 
+.contact-card:hover,
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.09);
+}
 
 /* =========================
    Print styles
    ========================= */
 
 @media print {
-
-    body {
-        background: #fff;
-        color: #000;
-        font-size: 11pt;
-    }
-
-    header,
-    nav,
-    footer {
+    body { background: #fff; color: #000; }
+    h2::after,
+    p.en::before,
+    .wave-divider {
         display: none;
     }
-
-    main {
-        max-width: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    h2 {
-        border: none;
-        page-break-after: avoid;
-    }
-
     p.en {
-        font-style: italic;
         color: #000;
+        font-style: italic;
     }
-
-    section {
-        page-break-inside: avoid;
-    }
-}
-
-/* =========================
-   Logo (top right)
-   ========================= */
-
-#site-logo {
-    position: absolute;
-    top: 2.5rem;
-    right: 1rem;
-    height: 96px;
-    width: auto;
-    opacity: 1;
-}
-
-/* keep header relative so logo positions correctly */
-header {
-    position: relative;
-}
-
-/* smaller logo on phones */
-@media (max-width: 600px) {
-    #site-logo {
-        height: 36px;
-        top: 2rem;
-    }
-}
-
-/* hide logo when printing */
-@media print {
-    #site-logo {
-        display: none;
-    }
-}
-
-/* =========================
-   Contact cards
-   ========================= */
-
-.contact-cards {
-    display: grid;
-    gap: 1rem;
-    max-width: 420px;
-}
-
-.contact-card {
-    display: block;
-    padding: 1rem 1.2rem;
-    border-radius: 12px;
-    border-color: #56725c;
-    background: #f4f4f4;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.contact-card .label {
-    display: block;
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-.contact-card .value {
-    font-weight: bold;
 }
