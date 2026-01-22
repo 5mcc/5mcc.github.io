@@ -103,9 +103,9 @@ h1::after {
     content: "";
     position: absolute;
     left: -0.3rem;
-    bottom: -1.1em;
-    width: 4.5rem;
-    height: 0.6em;
+    bottom: -0.6em;
+    width: 0.6rem;
+    height: 4.5em;
     border-radius: 14px;
     z-index: -1;
 }
@@ -185,29 +185,29 @@ p.en {
 p.en::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 1.5em;
+    left: -3.5 rem;
     width: 9rem;
     height: 10px;
 }
 
 p.en:nth-of-type(6n+1)::before {
-    background: radial-gradient(circle, rgba(126,177,155,0.55) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
+    background: radial-gradient(circle, rgba(129, 126, 177, 0.55) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
 }
 p.en:nth-of-type(6n+2)::before {
-    background: radial-gradient(circle, rgba(246,180,166,0.65) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
+    background: radial-gradient(circle, rgba(246, 226, 166, 0.65) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
 }
 p.en:nth-of-type(6n+3)::before {
-    background: radial-gradient(circle, rgba(156,135,178,0.55) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
+    background: radial-gradient(circle, rgba(135, 178, 135, 0.55) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
 }
 p.en:nth-of-type(6n+4)::before {
-    background: radial-gradient(circle, rgba(232,192,124,0.6) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
+    background: radial-gradient(circle, rgba(232, 165, 124, 0.6) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
 }
 p.en:nth-of-type(6n+5)::before {
-    background: radial-gradient(circle, rgba(140,176,210,0.55) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
+    background: radial-gradient(circle, rgba(187, 140, 210, 0.55) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
 }
 p.en:nth-of-type(6n+6)::before {
-    background: radial-gradient(circle, rgba(210,140,108,0.6) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
+    background: radial-gradient(circle, rgba(210, 108, 108, 0.6) 42%, transparent 44%) 0 50% / 14px 10px repeat-x;
 }
 
 /* English subtitles / titles */
@@ -267,17 +267,85 @@ p.en:nth-of-type(6n+6)::before {
 }
 
 /* =========================
-   Footer
+   Footer with wavy line
    ========================= */
 
 footer {
-    border-top: 1px solid #ddd;
+    position: relative;
+    border-top: none; /* Remove the thin border */
     padding-top: 2rem;
     padding-bottom: 2rem;
     text-align: center;
     font-size: 0.85rem;
     color: #666;
     background: transparent;
+}
+
+/* Wavy line at top of footer */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background-repeat: repeat-x;
+    pointer-events: none;
+}
+
+/* Different colored wavy lines based on position in document */
+footer:nth-of-type(6n+1)::before {
+    background-image: 
+        radial-gradient(circle at 8px 16px, rgba(126,177,155,0.55) 40%, transparent 42%),
+        radial-gradient(circle at 24px 16px, rgba(126,177,155,0.55) 40%, transparent 42%),
+        radial-gradient(circle at 40px 16px, rgba(126,177,155,0.55) 40%, transparent 42%);
+    background-size: 16px 32px, 16px 32px, 16px 32px;
+    background-position: 0 0, 8px 0, 16px 0;
+}
+
+footer:nth-of-type(6n+2)::before {
+    background-image: 
+        radial-gradient(circle at 6px 16px, rgba(246,180,166,0.65) 38%, transparent 40%),
+        radial-gradient(circle at 22px 16px, rgba(246,180,166,0.65) 38%, transparent 40%),
+        radial-gradient(circle at 38px 16px, rgba(246,180,166,0.65) 38%, transparent 40%);
+    background-size: 16px 32px, 16px 32px, 16px 32px;
+    background-position: 0 0, 8px 0, 16px 0;
+}
+
+footer:nth-of-type(6n+3)::before {
+    background-image: 
+        radial-gradient(circle at 7px 16px, rgba(156,135,178,0.55) 42%, transparent 44%),
+        radial-gradient(circle at 23px 16px, rgba(156,135,178,0.55) 42%, transparent 44%),
+        radial-gradient(circle at 39px 16px, rgba(156,135,178,0.55) 42%, transparent 44%);
+    background-size: 16px 32px, 16px 32px, 16px 32px;
+    background-position: 0 0, 8px 0, 16px 0;
+}
+
+footer:nth-of-type(6n+4)::before {
+    background-image: 
+        radial-gradient(circle at 9px 16px, rgba(232,192,124,0.6) 36%, transparent 38%),
+        radial-gradient(circle at 25px 16px, rgba(232,192,124,0.6) 36%, transparent 38%),
+        radial-gradient(circle at 41px 16px, rgba(232,192,124,0.6) 36%, transparent 38%);
+    background-size: 16px 32px, 16px 32px, 16px 32px;
+    background-position: 0 0, 8px 0, 16px 0;
+}
+
+footer:nth-of-type(6n+5)::before {
+    background-image: 
+        radial-gradient(circle at 8px 16px, rgba(140,176,210,0.55) 41%, transparent 43%),
+        radial-gradient(circle at 24px 16px, rgba(140,176,210,0.55) 41%, transparent 43%),
+        radial-gradient(circle at 40px 16px, rgba(140,176,210,0.55) 41%, transparent 43%);
+    background-size: 16px 32px, 16px 32px, 16px 32px;
+    background-position: 0 0, 8px 0, 16px 0;
+}
+
+footer:nth-of-type(6n+6)::before {
+    background-image: 
+        radial-gradient(circle at 7px 16px, rgba(210,140,108,0.6) 39%, transparent 41%),
+        radial-gradient(circle at 23px 16px, rgba(210,140,108,0.6) 39%, transparent 41%),
+        radial-gradient(circle at 39px 16px, rgba(210,140,108,0.6) 39%, transparent 41%);
+    background-size: 16px 32px, 16px 32px, 16px 32px;
+    background-position: 0 0, 8px 0, 16px 0;
 }
 
 /* =========================
