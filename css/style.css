@@ -273,10 +273,10 @@ footer {
     stroke-width: 2.4;
 }
 
-.wave-divider.deep-1 path { stroke: #9c87b2; }
-.wave-divider.deep-2 path { stroke: #7eb19b; }
-.wave-divider.deep-3 path { stroke: #e8c07c; }
-.wave-divider.deep-4 path { stroke: #d28c6c; }
+.deep-1 path { stroke: #9c87b2; }
+.deep-2 path { stroke: #7eb19b; }
+.deep-3 path { stroke: #e8c07c; }
+.deep-4 path { stroke: #d28c6c; }
 
 /* =========================
    Contact cards
