@@ -11,10 +11,16 @@ fetch("/episodes.json")
   .then(episodes => {
     renderEpisodes(episodes);
     if (episodes.length > visibleCount) {
-      showMoreBtn.style.display = "inline-block";
+      // Add 'show' class instead of changing inline style
+      showMoreBtn.classList.add('show');
       showMoreBtn.addEventListener("click", () => {
         visibleCount += 10;
         renderEpisodes(episodes);
+        
+        // Hide button if all episodes are shown
+        if (visibleCount >= episodes.length) {
+          showMoreBtn.classList.remove('show');
+        }
       });
     }
   })

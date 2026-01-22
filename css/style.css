@@ -185,10 +185,10 @@ p.en {
 p.en::before {
     content: "";
     position: absolute;
-    top: -0.5em;
-    left: -3.5rem;
-    width: 9rem;
-    height: 10px;
+    top: -0.6em;
+    left: -3.2rem;
+    width: 8rem;
+    height: 14px;
 }
 
 p.en:nth-of-type(6n+1)::before {
@@ -312,6 +312,60 @@ footer {
 
 .contact-card .value {
     font-weight: bold;
+}
+
+/* =========================
+   Show More Button
+   ========================= */
+
+#show-more {
+    display: none;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 2px solid rgba(156,135,178,0.65);
+    background: #f4f4f4;
+    color: #222;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 200px;
+}
+
+#show-more:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: rgba(156,135,178,0.85);
+    background: #f0f0f0;
+}
+
+#show-more:active {
+    transform: translateY(-1px);
+}
+
+#show-more.show {
+    display: block;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Hide button when all episodes are shown */
+#show-more.hidden {
+    display: none !important;
 }
 
 /* =========================
