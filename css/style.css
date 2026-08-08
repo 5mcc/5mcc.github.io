@@ -104,8 +104,8 @@ h1::after {
     position: absolute;
     left: -0.9rem;
     bottom: -0.6em;
-    width: 1.5rem;
-    height: 4.5em;
+    width: 4.5rem;
+    height: 1.5em;
     border-radius: 14px;
     z-index: -27;
 }
