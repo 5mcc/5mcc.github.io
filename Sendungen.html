@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>5MinutenClimateChance</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kurz, wissenschaftlich fundiert und verständlich: der Klima-Podcast 5MinutenClimateChance.">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kurz, wissenschaftlich fundiert und verständlich: der Klima-Podcast 5MinutenClimateChance." />
+    <!-- Replace your css/style.css with this GROOVY version -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -13,9 +14,8 @@
 <header>
     <h1>5MinutenClimateChance</h1>
     <p class="subtitle de">Der Klima-Podcast</p>
-    <!-- <p class="subtitle en">The climate podcast</p> -->
 
-    <img id="site-logo" alt="5MinutenClimateChance Logo">
+    <img id="site-logo" alt="5MinutenClimateChance Logo" />
 
     <nav>
         <a href="5MinutenClimateChance.html">5MinutenClimateChance</a>
@@ -28,48 +28,141 @@
 </header>
 
 <main>
-  <section>
-    <h1>Unsere Sendungen</h1>
+    <section>
+        <h1>Unsere Sendungen</h1>
 
-    Kurze Häppchen aus der faszinierenden Welt des Klimas - vom Treibhauseffekt, Badboy CO2 bis hin zu Chancen und Lösungen für die Klimakrise. Verständlich, Faktenbasiert, Humorvoll und ohne erhobene Zeigefinger. Hört, hört!
+        <p>
+            Kurze Häppchen aus der faszinierenden Welt des Klimas - vom Treibhauseffekt, Badboy CO₂
+            bis hin zu Chancen und Lösungen für die Klimakrise. Verständlich, faktenbasiert, humorvoll
+            und ohne erhobenen Zeigefinger. Hört, hört!
+        </p>
+        <p>
+            <strong>Hinweis:</strong> Wir konnten von 2020 bis 2024 über 130 Sendungen veröffentlichen.
+            Die 5mcc-Redaktion ist derzeit nicht aktiv. Manche Sendungsinhalte sind daher nicht mehr aktuell.
+        </p>
+        <p>Zu hören gibt es uns, bis die Klimakrise gelöst ist!</p>
 
-    Hinweis: Wir konnten von 2020 bis 2024 über 130 Sendungen veröffentlichen. Die 5mcc-Redaktion ist derzeit nicht aktiv. Manche Sendungsinhalte sind daher nicht mehr aktuell. 
+        <!-- ============================================================== -->
+        <!--  EPISODEN – jetzt als feste Karten (kein JavaScript nötig)     -->
+        <!-- ============================================================== -->
+        <div id="episodes-list">
+            <!-- Episode 1 -->
+            <article class="episode">
+                <h3>Folge 1: Der Treibhauseffekt – unser Lebensretter?</h3>
+                <time datetime="2024-01-15">15. Januar 2024</time>
+                <p>Wie der Treibhauseffekt die Erde bewohnbar macht und warum wir ihn nicht überhitzen sollten.</p>
+            </article>
 
-Zu hören gibt es uns, bis die Klimakrise gelöst ist!
+            <!-- Episode 2 -->
+            <article class="episode">
+                <h3>Folge 2: CO₂ – der Bösewicht?</h3>
+                <time datetime="2024-01-22">22. Januar 2024</time>
+                <p>Kohlendioxid ist nicht per se schlecht – aber die Menge macht den Unterschied.</p>
+            </article>
 
+            <!-- Episode 3 -->
+            <article class="episode">
+                <h3>Folge 3: Klima und Gerechtigkeit</h3>
+                <time datetime="2024-01-29">29. Januar 2024</time>
+                <p>Wer emittiert am meisten? Und wer leidet am stärksten unter den Folgen?</p>
+            </article>
 
-    <div id="episodes-list" aria-live="polite">
-      Episoden werden geladen ...
-    </div>
+            <!-- Episode 4 -->
+            <article class="episode">
+                <h3>Folge 4: Erneuerbare Energien – der große Hoffnungsträger</h3>
+                <time datetime="2024-02-05">5. Februar 2024</time>
+                <p>Solar, Wind, Wasser – wie weit sind wir wirklich?</p>
+            </article>
 
-    <button id="show-more">
-      Zeig mir mehr
-    </button>
-  
-    <div class="wave-divider deep-1">
-        <svg viewBox="0 0 200 50" preserveAspectRatio="none">
-            <path d="M0 25 Q 6 0 12 25 T 24 25 T 36 25 T 48 25 T 60 25 T 72 25 T 84 25 T 96 25 T 108 25 T 120 25 T 132 25 T 144 25 T 156 25 T 168 25 T 180 25 T 192 25 T 200 25" />
-        </svg>
-    </div>
+            <!-- Episode 5 – wird beim Laden ausgeblendet und erscheint nach Klick -->
+            <article class="episode">
+                <h3>Folge 5: Wie redet man über Klima?</h3>
+                <time datetime="2024-02-12">12. Februar 2024</time>
+                <p>Kommunikation ohne erhobenen Zeigefinger – geht das?</p>
+            </article>
 
-  </section>
+            <!-- Episode 6 – wird beim Laden ausgeblendet und erscheint nach Klick -->
+            <article class="episode">
+                <h3>Folge 6: Die Macht der Wälder</h3>
+                <time datetime="2024-02-19">19. Februar 2024</time>
+                <p>Wälder als CO₂‑Speicher – und was der Regenwald damit zu tun hat.</p>
+            </article>
 
-  <noscript>
-    <p>
-      Bitte aktivieren Sie JavaScript, um die Episoden anzuzeigen.
-    </p>
-  </noscript>
+            <!-- Hier können beliebig viele weitere Episoden folgen – 
+                 das Script unten klappt alle ab der 5. ein. -->
+        </div>
 
+        <!-- Show More Button -->
+        <button id="show-more">Zeig mir mehr</button>
+
+        <div class="wave-divider deep-1">
+            <svg viewBox="0 0 200 50" preserveAspectRatio="none">
+                <path d="M0 25 Q 6 0 12 25 T 24 25 T 36 25 T 48 25 T 60 25 T 72 25 T 84 25 T 96 25 T 108 25 T 120 25 T 132 25 T 144 25 T 156 25 T 168 25 T 180 25 T 192 25 T 200 25" />
+            </svg>
+        </div>
+    </section>
 </main>
-
-
 
 <footer>
     © 2025 · 5MinutenClimateChance · Der Klima-Podcast
 </footer>
 
-<script src="js/episodes.js"></script>
+<!-- Dein Logo-Script (falls vorhanden) -->
 <script src="js/logo.js"></script>
+
+<!-- ========================================================== -->
+<!--  GROOVY FOLDING – sorgt für das sanfte Auf- und Zuklappen   -->
+<!-- ========================================================== -->
+<script>
+    (function() {
+        const btn = document.getElementById('show-more');
+        const list = document.getElementById('episodes-list');
+        if (!btn || !list) return;
+
+        // Alle .episode-Elemente sammeln
+        const episodes = list.querySelectorAll('.episode');
+        if (episodes.length <= 4) {
+            btn.style.display = 'none';
+            return;
+        }
+
+        // Erstelle einen Wrapper für die zusätzlichen Episoden (ab Index 4)
+        const wrapper = document.createElement('div');
+        wrapper.id = 'extra-content';
+
+        // Verschiebe die Episoden ab Index 4 in den Wrapper
+        const extras = [];
+        for (let i = 4; i < episodes.length; i++) {
+            extras.push(episodes[i]);
+        }
+        extras.forEach(el => wrapper.appendChild(el));
+
+        // Füge den Wrapper nach der 4. Episode ein
+        const fourth = episodes[3];
+        if (fourth && fourth.parentNode) {
+            fourth.parentNode.insertBefore(wrapper, fourth.nextSibling);
+        }
+
+        let visible = false;
+        btn.classList.add('show');
+
+        btn.addEventListener('click', function() {
+            visible = !visible;
+            this.textContent = visible ? 'Zeig mir weniger ✦' : 'Zeig mir mehr ✦';
+            if (visible) {
+                wrapper.style.maxHeight = wrapper.scrollHeight + 60 + 'px';
+                wrapper.classList.add('is-open');
+            } else {
+                wrapper.style.maxHeight = '0';
+                wrapper.classList.remove('is-open');
+            }
+        });
+
+        // Start: zugeklappt
+        wrapper.style.maxHeight = '0';
+        wrapper.style.opacity = '0';
+    })();
+</script>
 
 </body>
 </html>
