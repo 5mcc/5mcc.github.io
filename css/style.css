@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* =========================
    Base – Groovy palette
    ========================= */
@@ -514,3 +515,57 @@ a:hover::after {
     .episode::before { display: none; }
     #extra-content { max-height: none !important; opacity: 1 !important; overflow: visible !important; }
 }
+=======
+<script>
+    (function() {
+        const btn = document.getElementById('show-more');
+        if (!btn) return;
+
+        const sections = document.querySelectorAll('section');
+        // If there are 4 or fewer sections, hide the button and stop
+        if (sections.length <= 4) {
+            btn.style.display = 'none';
+            return;
+        }
+
+        // Gather sections after the 4th one
+        const extra = Array.from(sections).slice(4);
+        const parent = sections[3].parentNode;
+        const nextSibling = sections[3].nextSibling;
+
+        // Create a wrapper for smooth folding
+        const wrapper = document.createElement('div');
+        wrapper.id = 'extra-content';
+
+        // Move the extra sections into the wrapper
+        while (extra.length) {
+            wrapper.appendChild(extra.shift());
+        }
+
+        // Insert the wrapper where the sections used to be
+        parent.insertBefore(wrapper, nextSibling);
+
+        let visible = false;
+        btn.classList.add('show');
+
+        btn.addEventListener('click', function() {
+            visible = !visible;
+            this.textContent = visible ? 'Show less ✦' : 'Show more ✦';
+
+            if (visible) {
+                wrapper.style.maxHeight = wrapper.scrollHeight + 60 + 'px';
+                wrapper.style.opacity = '1';
+                wrapper.classList.add('is-open');
+            } else {
+                wrapper.style.maxHeight = '0';
+                wrapper.style.opacity = '0';
+                wrapper.classList.remove('is-open');
+            }
+        });
+
+        // Ensure the wrapper starts closed
+        wrapper.style.maxHeight = '0';
+        wrapper.style.opacity = '0';
+    })();
+</script>
+>>>>>>> parent of b35e67f (groovy in)
